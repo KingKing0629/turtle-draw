@@ -41,21 +41,10 @@ while line:
 
 	line = TurtleDrawFile.readline()
 
-turtle.done()
+print("Drawing complete. Press Enter to exit.")
+input()
 TurtleDrawFile.close()
-'''
-color_map = {"green": "green", "blue": "blue", "red": "red", "black": "black"}
-
-for command in commands:
-	parts = command.split()
-	if parts[0] == "stop":
-		t.penup()
-	else:
-		color = parts[0]
-		x = int(parts[1])
-		y = int(parts[2])
-		t.pencolor(color_map[color])
-		t.pendown()
-		t.goto(x, y)
-		
-'''
+try:
+	turtle.bye()
+except turtle.Terminator:
+	pass
